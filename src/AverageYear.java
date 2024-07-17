@@ -1,7 +1,29 @@
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class AverageYear {
-    private static HashMap<Integer, double[]> getMap(HashMap<Integer, Student> text) {
+    private static HashMap<Integer, ArrayList<Integer>> years = new HashMap<Integer, ArrayList<Integer>>();
+
+    private static void getMap(HashMap<Integer, Student> text) {
+        text.forEach((id, student) -> {
+            if (!years.containsKey(student.getYear())) {
+
+                years.put(student.getYear(), new ArrayList<Integer>() {
+                    {
+                        add(0, id);
+                    }
+                });
+            } else {
+                ArrayList<Integer> ids = years.get(student.getYear());
+                int index = ids.size();
+                ids.add(index, id);
+                years.replace(student.getYear(), ids);
+            }
+        });
+    }
+
+    public static void getAverageYear(HashMap<Integer, Student> text) {
+        getMap(text);
         HashMap<Integer, double[]> years = new HashMap<Integer, double[]>();
         for (int i = 0; i < text.size(); i++) {
             Student student = text.get(i);
@@ -18,25 +40,21 @@ public class AverageYear {
                 years.replace(student.getYear(), note);
             }
         }
-        return years;
-    }
-
-    public static void getAverageYear(HashMap<Integer, Student> text) {
-        HashMap<Integer, double[]> years = getMap(text);
         years.forEach((t, u) -> {
             System.out.println("Media do ano " + t);
-            System.out.println("Media Disiciplina 1: " + u[0]/u[4]);
-            System.out.println("Media Disiciplina 2: " + u[1]/u[4]);
-            System.out.println("Media Disiciplina 3: " + u[2]/u[4]);
-            System.out.println("Media Disiciplina 4: " + u[3]/u[4]);
+            System.out.println("Media Disiciplina 1: " + u[0] / u[4]);
+            System.out.println("Media Disiciplina 2: " + u[1] / u[4]);
+            System.out.println("Media Disiciplina 3: " + u[2] / u[4]);
+            System.out.println("Media Disiciplina 4: " + u[3] / u[4]);
         });
     }
 
     public static void getMedianYear(HashMap<Integer, Student> text) {
+        getMap(text);
         
     }
 
-    public static void getStandardDeviationYear(){
-        
+    public static void getStandardDeviationYear() {
+
     }
 }
