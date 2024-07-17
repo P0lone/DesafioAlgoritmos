@@ -24,12 +24,16 @@ public class Text {
         }
     }
 
-    public HashMap<Integer, Integer[]> readText() {
-        HashMap<Integer, Integer[]> text = new HashMap<Integer, Integer[]>();
+    public HashMap<Integer, Student> readText() {
+        HashMap<Integer, Student> text = new HashMap<Integer, Student>();
         String line;
+        int i = 0;
         try (BufferedReader br = new BufferedReader(new FileReader(path))) {
             while ((line = br.readLine()) != null) {
-                
+                String[] values = line.split(",");           
+                Student student = new Student(values[0], values[1], values[2], values[3], values[4], values[5]);
+                text.put(i, student);
+                i++;
             }
         } catch (IOException e) {
             e.printStackTrace();
