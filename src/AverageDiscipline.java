@@ -19,7 +19,7 @@ public class AverageDiscipline {
         }
         for (int i =0; i<discipline.length;i++) {
             average[i] = discipline[i]/text.size();
-            System.out.println("Media da Disciplina "+i+": "+average[i]);
+            System.out.println("Media da Disciplina "+(i+1)+": "+average[i]);
         }
     }
 
@@ -53,9 +53,9 @@ public class AverageDiscipline {
             median4 = (notes4.get(mid-1)+1)/2;
         }
         System.out.println("Mediana Disciplina 1: "+median1);
-        System.out.println("Mediana Disciplina 1: "+median2);
-        System.out.println("Mediana Disciplina 1: "+median3);
-        System.out.println("Mediana Disciplina 1: "+median4);
+        System.out.println("Mediana Disciplina 2: "+median2);
+        System.out.println("Mediana Disciplina 3: "+median3);
+        System.out.println("Mediana Disciplina 4: "+median4);
     }
 
     public static void getStandardDeviation(HashMap<Integer, Student> text){

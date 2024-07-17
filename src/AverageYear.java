@@ -25,10 +25,10 @@ public class AverageYear {
         HashMap<Integer, double[]> years = getMap(text);
         years.forEach((t, u) -> {
             System.out.println("Media do ano " + t);
-            System.out.println("Media Disiciplina 1: " + u[0]+u[4]);
-            System.out.println("Media Disiciplina 2: " + u[1]+u[4]);
-            System.out.println("Media Disiciplina 3: " + u[2]+u[4]);
-            System.out.println("Media Disiciplina 4: " + u[3]+u[4]);
+            System.out.println("Media Disiciplina 1: " + u[0]/u[4]);
+            System.out.println("Media Disiciplina 2: " + u[1]/u[4]);
+            System.out.println("Media Disiciplina 3: " + u[2]/u[4]);
+            System.out.println("Media Disiciplina 4: " + u[3]/u[4]);
         });
     }
 
