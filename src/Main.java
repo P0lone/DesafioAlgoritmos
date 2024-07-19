@@ -6,10 +6,13 @@ public class Main {
         Text text = new Text();
         text.getText();
         HashMap<Integer, Student> textMap = text.readText();
-        //AverageYear.getAverageYear(textMap);
+        AverageYear.getMap(textMap);
+        AverageYear.getAverageYear(textMap);
         AverageYear.getMedianYear(textMap);
-        //AverageDiscipline.getAverage(textMap);
-        //AverageDiscipline.getStandardDeviation(textMap);
-        //AverageDiscipline.getMedian(textMap);
+        AverageYear.getStandardDeviationYear(textMap);
+        AverageDiscipline.getAverage(textMap);
+        AverageDiscipline.getStandardDeviation(textMap);
+        AverageDiscipline.getMedian(textMap);
+        System.out.println(textMap.size());
     }
 }

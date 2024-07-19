@@ -32,7 +32,10 @@ public class Text {
             while ((line = br.readLine()) != null) {
                 String[] values = line.split(",");           
                 Student student = new Student(values[0], values[1], values[2], values[3], values[4], values[5]);
+                student.getApprove();
+                student.getAverage();
                 text.put(i, student);
+                System.out.println(student.average);
                 i++;
             }
         } catch (IOException e) {

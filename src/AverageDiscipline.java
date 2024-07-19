@@ -39,6 +39,9 @@ public class AverageDiscipline {
             notes4.add(student.getNote4());
         });
         Collections.sort(notes1);
+        Collections.sort(notes2);
+        Collections.sort(notes3);
+        Collections.sort(notes4);
         if(text.size()%2==0){
             int mid = text.size()/2;
             median1 = (notes1.get(mid)+notes1.get(mid-1))/2;

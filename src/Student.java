@@ -4,7 +4,28 @@ public class Student {
     int note2;
     int note3;
     int note4;
+    double average;
+    boolean approveDiscipline1 = false;
+    boolean approveDiscipline2 = false;
+    boolean approveDiscipline3 = false;
+    boolean approveDiscipline4 = false;
     int year;
+
+    public void getApprove(){
+        if (note1>=70) {
+            approveDiscipline1 = true;
+        }if (note2>=70) {
+            approveDiscipline2 = true;
+        }if (note3>=70) {
+            approveDiscipline3 = true;
+        }if (note4>=70) {
+            approveDiscipline4 = true;
+        }
+    }
+
+    public void getAverage(){
+        average = (double) (note1+note2+note3+note4)/4;
+    }
     
     public Student(String values, String values2, String values3, String values4, String values5, String values6) {
         this.id = Integer.parseInt(values);
